@@ -29,7 +29,7 @@ helm-demo-configmap ./mychart --dry-run --debug --set namespace=lab
 helm install gitops-test /root/gitops --values /root/gitops/values.yaml --namespace=myapp-test --create-namespace --set deployments.envValue=test --dry-run
 
 helm get manifest <NAME>
-
+```
 ### toYaml 
 ```
 limits:
@@ -46,7 +46,7 @@ limits:
 spec:
   limits:
     - type: Container
-    
+      {{- toYaml .Values.limits | nindent 6 }}
 ```
 ### Template Function
 http://masterminds.github.io/sprig/strings.html
