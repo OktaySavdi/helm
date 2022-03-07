@@ -154,4 +154,95 @@ LangUsed: |-
  Machine Type: {{ .machine | default "NA" | quote }}
  Release: {{ $relname }}
  {{- end }} 
-``` 
+```
+### Include Content Form Same File
+```  
+{{- define "mychart.systemlables" }}
+  labels:
+    drive: ssd
+    machine: frontdrive
+    rack: 4c
+    vcard: 8g
+{{- end }}
+
+{{- template "mychart.systemlables" }}
+```  
+### Include scope
+```
+_helpers.tpl
+
+
+{{- define "mychart.systemlables" }}
+  labels:
+    drive: ssd
+    machine: frontdrive
+    rack: 4c
+    vcard: 8g
+{{- end }}
+```
+### Include Template Using Keyword Include
+```
+ metadata:
+   name: {{ .Release.Name}}-configmap
+   labels:
+ {{ include "mychart.version" . | indent 4 }}
+ data:
+   myvalue: "Sample Config Map"
+   costCode: {{ .Values.costCode }}
+   pipeline: {{ .Values.projectCode | upper | quote }}
+   now: {{ now | date "2006-01-02"| quote }}
+   contact: {{ .Values.contact | default "1-800-123-0000" | quote }}
+   {{- range $key, $value := .Values.tags }}
+   {{ $key }}: {{ $value | quote }}
+   {{- end }}
+
+{{include "mychart.version" $ | indent 2 }}
+```  
+### Notes
+```
+vi templates/NOTES.txt
+ 
+ Thank you for support {{ .Chart.Name }}.
+ 
+ Your release is named {{ .Release.Name }}.
+ 
+ To learn more about the release, try:
+ 
+   $ helm status {{ .Release.Name }}
+   $ helm get all {{ .Release.Name }}
+   $ helm uninstall {{ .Release.Name }}
+ 
+helm install notesdemo ./mychart
+```
+### Sub Charts
+```
+cd mychart/charts
+
+helm create mysubchart
+
+rm -rf mysubchart/templates/*.*
+---
+mychart/charts/mysubchart/templates/configmap.yaml
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-innerconfig
+data:
+  dbhost: {{ .Values.dbhostname }}
+```
+### Sub Chart Global
+```
+mychart/values.yaml
+
+global:
+  orgdomain: com.muthu4all
+
+
+mychart/charts/mysubchart/templates/configmap.yaml
+and
+mychart/templates/configmap.yaml
+
+
+orgdomain: {{ .Values.global.orgdomain }}
+```
