@@ -29,6 +29,24 @@ helm-demo-configmap ./mychart --dry-run --debug --set namespace=lab
 helm install gitops-test /root/gitops --values /root/gitops/values.yaml --namespace=myapp-test --create-namespace --set deployments.envValue=test --dry-run
 
 helm get manifest <NAME>
+
+### toYaml 
+```
+limits:
+  default:
+    cpu: 150m
+    memory: 900Mi
+  defaultRequest:
+    cpu: 100m
+    memory: 600Mi
+  max:
+    cpu: 1
+    memory: 2100Mi
+
+spec:
+  limits:
+    - type: Container
+    
 ```
 ### Template Function
 http://masterminds.github.io/sprig/strings.html
