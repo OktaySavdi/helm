@@ -1,5 +1,5 @@
 ## Application Name
-appname: frontend
+appname: istio
 
 ## Namespace Name
 namespace: gitops-lab
@@ -11,9 +11,9 @@ replicaCount: 1
 ## It's recommended to change this to 'Always' if the image tag is 'latest'
 ## ref: http://kubernetes.io/docs/user-guide/images/#updating-images
 image:
-  repository: nginx
+  repository: quay.io/oktaysavdi/istioproject
   pullPolicy: Always
-  tag: "5.7.30"
+  tag: "v1"
 
 ## Set strategy for deployment
 strategy:
