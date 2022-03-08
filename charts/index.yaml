@@ -9,6 +9,6 @@ entries:
     name: deployment
     type: application
     urls:
-    - https://github.com/OktaySavdi/helm/blob/main/charts/deployment-0.1.0.tgz
+    - https://github.com/OktaySavdi/helm/blob/main/charts/deployment-0.1.0.tgz?raw=true
     version: 0.1.0
 generated: "2022-03-08T16:44:42.872147565+03:00"
