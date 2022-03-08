@@ -27,7 +27,7 @@ strategy:
 
 ## please add approprite label name
 labels:
-  team: myteam@greentube.com
+  team: myteam
   env: prod  
 
 # Optionally specify an array of imagePullSecrets.
