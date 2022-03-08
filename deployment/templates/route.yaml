@@ -1,0 +1,22 @@
+{{- if .Values.route.enabled -}}
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: {{ include "deploypackage.fullname" . }}
+  labels:
+    app: {{ include "deploypackage.fullname" . }}
+  annotations:
+    openshift.io/host.generated: 'true'
+spec:
+  to:
+    kind: Service
+    name: {{ include "deploypackage.fullname" . }}
+    weight: 100
+  port:
+    targetPort: {{ .Values.route.targetServicePort }}
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Allow
+  wildcardPolicy: None
+{{- end }}
+

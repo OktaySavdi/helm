@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "deploypackage.fullname" . }}
+  labels:
+    {{- include "deploypackage.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    {{- toYaml .Values.service.ports | nindent 4 }}
+  selector:
+    {{- include "deploypackage.selectorLabels" . | nindent 4 }}
+
+
