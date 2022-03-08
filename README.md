@@ -1,5 +1,15 @@
 ## Helm
 
+## Prepare Pull Request
+
+To add a new chart, do the following in the root directory of the repo, and open a PR:
+
+-   Add a chart directory to  `stable/`  or  `/alpha`  and place the relevant chart files there
+-   Generate the tar by doing a  `helm package stable/somechart`
+-   Move the generated .tgz file to  `/charts`  by doing a  `mv somechart-0.1.0.tgz charts/`
+-   Re-generate the index.yaml file  `helm repo index charts/ --url https://github.com/OktaySavdi/helm/blob/main/charts/deployment-0.1.0.tgz`
+-   Add  `index.yaml`, the tarball, and all files in the chart directory to PR
+
 ### cli
 ```
 helm search hub
