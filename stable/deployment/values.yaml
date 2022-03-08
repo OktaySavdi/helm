@@ -1,7 +1,10 @@
-# Default values for deploypackage.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+## Application Name
+appname: frontend
 
+## Namespace Name
+namespace: gitops-lab
+
+## Set replicaset
 replicaCount: 1
 
 ## Specify an imagePullPolicy (Required)
@@ -152,7 +155,7 @@ service:
 ## Configure openshift route
 ## ref: http://kubernetes.io/docs/user-guide/services/
 route:
-  enabled: false
+  enabled: true
   targetServicePort: *referencedPortName
   tls:
     termination: passthrough
@@ -294,7 +297,7 @@ extras: []
 
 ## Persist data to a persistent volume
 persistence:
-  enabled: true
+  enabled: false
   ## database data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning

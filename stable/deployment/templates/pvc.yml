@@ -2,7 +2,8 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ include "deploypackage.fullname" . }}
+  name: {{ .Values.appname }}
+  namespace: {{ .Values.namespace }}
   labels:
     app: {{ include "deploypackage.fullname" . }}
     release: {{ .Release.Name | quote }}

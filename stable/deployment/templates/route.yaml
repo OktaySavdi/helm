@@ -2,9 +2,10 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: {{ include "deploypackage.fullname" . }}
+  name: {{ .Values.appname }}
   labels:
     app: {{ include "deploypackage.fullname" . }}
+  namespace: {{ .Values.namespace }}
   annotations:
     openshift.io/host.generated: 'true'
 spec:

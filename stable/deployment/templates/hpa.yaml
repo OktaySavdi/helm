@@ -2,9 +2,10 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "deploypackage.fullname" . }}
+  name: {{ .Values.appname }}
   labels:
     {{- include "deploypackage.labels" . | nindent 4 }}
+  namespace: {{ .Values.namespace }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1

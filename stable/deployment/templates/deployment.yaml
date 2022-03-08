@@ -1,12 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "deploypackage.fullname" . }}
+  name: {{ .Values.appname }}
   labels:
     {{- include "deploypackage.labels" . | nindent 4 }}
     {{- range $key, $value := .Values.labels }}
     {{ $key }}: {{ $value | quote }}
     {{- end }}  
+  namespace: {{ .Values.namespace }}
 spec:
   strategy:
   {{- toYaml .Values.strategy | nindent 4  }}
