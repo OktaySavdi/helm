@@ -8,7 +8,7 @@ To add a new chart, do the following in the root directory of the repo, and open
 -   check chart configuration properly `helm lint stable/deployment/`
 -   Generate the tar by doing a  `helm package stable/deployment/`
 -   Move the generated .tgz file to  `/charts`  by doing a  `mv deployment-0.1.0.tgz charts/`
--   Re-generate the index.yaml file  `helm repo index charts/ --url https://oktaysavdi.github.io/helm/chart/`
+-   Re-generate the index.yaml file  `helm repo index charts/ --url https://oktaysavdi.github.io/helm/charts/`
 -   Add  `index.yaml`, the tarball, and all files in the chart directory to PR
 
 ### cli
