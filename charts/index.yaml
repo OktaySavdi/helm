@@ -3,12 +3,12 @@ entries:
   deployment:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-08T16:44:42.874143531+03:00"
+    created: "2022-03-08T17:08:55.063783119+03:00"
     description: A Helm chart for Kubernetes
-    digest: 9f0cab0d560345ea928a3b9af1d8e439251d75c9a8907aebbe8c258f303aa11f
+    digest: c1349be40111e379f1a343e5074429e06a95bc0a21d36604a3ef66976e45400c
     name: deployment
     type: application
     urls:
-    - https://github.com/OktaySavdi/helm/blob/main/charts/deployment-0.1.0.tgz
+    - https://oktaysavdi.github.io/helm/chart/deployment-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-08T16:44:42.872147565+03:00"
+generated: "2022-03-08T17:08:55.060969329+03:00"
