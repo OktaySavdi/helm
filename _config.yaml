@@ -1,2 +1,3 @@
 exclude: 
   - "README.md"
+  - "Create a public Helm chart repository with GitHub Pages.md"
