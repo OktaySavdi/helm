@@ -114,3 +114,7 @@ stable/deployment 0.1.0 A Helm chart for Kubernetes
 […]
 ```
 
+**Reference**:
+
++ https://medium.com/@mattiaperi/create-a-public-helm-chart-repository-with-github-pages-49b180dbb417
++ https://tech.paulcz.net/blog/creating-a-helm-chart-monorepo-part-1/
