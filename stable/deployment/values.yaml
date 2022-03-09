@@ -157,8 +157,10 @@ service:
 route:
   enabled: true
   targetServicePort: *referencedPortName
+  host: route-gitops-lab.apps.mycluster.mydomain.com
+  path: /istio
   tls:
-    termination: passthrough
+    termination: edge
     insecureEdgeTerminationPolicy: Allow
     wildcardPolicy: None
 
