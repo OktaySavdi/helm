@@ -41,6 +41,44 @@ helm install gitops-test /root/gitops --values /root/gitops/values.yaml --namesp
 
 helm get manifest <NAME>
 ```
+### Helm lint
+```
+helm lint upgrade-rlbk/
+```
+###  Helm Get and Status
+```
+helm list
+helm get notes install-upgrade-rlbk-demo
+helm get values install-upgrade-rlbk-demo
+helm get manifest install-upgrade-rlbk-demo
+helm get hooks install-upgrade-rlbk-demo
+helm get all install-upgrade-rlbk-demo
+helm status install-upgrade-rlbk-demo
+```
+###  Upgrade Chart
+```
+helm push upgrade-rlk/ <my_repo_name>
+helm repo update
+helm search repo <my_repo_name>
+helm search repo -l <my_repo_name>
+helm upgrade <app_name> stable/<my_repo_name>
+helm history <app_name>
+```
+###  Rollback Helm Installed Chart
+```
+helm rollback <RELEASE> [REVISION] [flags]
+helm rollback <app_name> 2
+```
+###  Helm dependency
+```
+vi Chart.yaml
+```
+```
+dependencies:
+- name: nginx
+  version: "1.2.3"
+  repository: "https://example.com/charts"
+```
 ### toYaml 
 ```
 limits:
