@@ -39,6 +39,7 @@ imagePullSecrets: []
 ## Additionnal arguments that are passed to the container.
 args: []
   #- "-xms=10m -xmx=100m"
+  #-Duser.timezone=Europe/Istanbul
 
 ## Additionnal arguments that are passed to the container.
 command: []
