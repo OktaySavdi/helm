@@ -21,6 +21,7 @@ helm repo list
 helm search repo stable
 helm search repo stable/mysql
 
+helm install nginx-stable/nginx-ingress --version=0.10.0 --generate-name
 helm install stable/mysql --generate-name
 helm install stable/mysql --version=1.0.7
 
