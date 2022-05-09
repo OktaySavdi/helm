@@ -40,6 +40,10 @@ helm install helm-demo-configmap ./mychart --dry-run --debug
 helm-demo-configmap ./mychart --dry-run --debug --set namespace=lab
 helm install gitops-test /root/gitops --values /root/gitops/values.yaml --namespace=myapp-test --create-namespace --set deployments.envValue=test --dry-run
 
+helm show values prometheus-community/kube-prometheus-stack
+helm upgrade --install -f values.yaml [RELEASE_NAME] prometheus-community/kube-prometheus-stack
+helm upgrade [RELEASE_NAME] prometheus-community/kube-prometheus-stack
+
 helm get manifest <NAME>
 ```
 ### Helm lint
