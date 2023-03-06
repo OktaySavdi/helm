@@ -44,6 +44,9 @@ helm show values prometheus-community/kube-prometheus-stack
 helm upgrade --install -f values.yaml [RELEASE_NAME] prometheus-community/kube-prometheus-stack
 helm upgrade [RELEASE_NAME] prometheus-community/kube-prometheus-stack
 
+helm search repo -l | grep bitnami/harbor
+helm upgrade atix-harbor bitnami/harbor --version=13.2.2 -f values.yaml
+
 helm get manifest <NAME>
 ```
 ### Helm lint
