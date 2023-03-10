@@ -74,8 +74,9 @@ helm history <app_name>
 ```
 ###  Rollback Helm Installed Chart
 ```
-helm rollback <RELEASE> [REVISION] [flags]
-helm rollback <app_name> 2
+helm history <RELEASE_NAME>
+helm rollback <RELEASE_NAME> [REVISION]
+helm rollback <RELEASE_NAME> 2
 ```
 ###  Helm dependency
 ```
